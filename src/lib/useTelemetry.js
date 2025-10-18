@@ -6,7 +6,7 @@ export default function useTelemetry(vehicleId){
 
   useEffect(()=>{
     if(!vehicleId) return;
-    const ws = new WebSocket(`ws://autopulseai-backend.onrender.com/ws/telemetry/${vehicleId}`);
+    const ws = new WebSocket(`wss://autopulseai-backend.onrender.com/ws/telemetry/${vehicleId}`);
     ws.onopen = ()=> setStatus("online");
     ws.onmessage = (e)=>{
       try{
