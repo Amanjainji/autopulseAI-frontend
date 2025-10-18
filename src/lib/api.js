@@ -1,9 +1,6 @@
 import axios from "axios";
 
-const baseURL =
-  window.location.hostname === "localhost"
-    ? "http://localhost:8000"
-    : process.env.VITE_API_URL;
+const baseURL = import.meta.env.VITE_API_URL; 
 
 const api = axios.create({ baseURL });
 
